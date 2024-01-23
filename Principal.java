@@ -23,6 +23,7 @@ public class Principal {
             br.close();
 
         } catch (FileNotFoundException e) {
+            //Maneja errores con el archivo tipo .txt
             System.err.println("Error: File 'data.txt' not found. Check the file location.");
             e.printStackTrace();
         } catch (IOException e) {
