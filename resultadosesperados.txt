@@ -4,7 +4,6 @@ Resultado de '8 2 / 4 *': 16.0
 Resultado de '2 7 + 3 /': 3.0
 Resultado de '6 2 / 3 *': 9.0
 Resultado de '4 5 * 2 +': 22
-Resultado de '7 3 / 4 *': 12.0
 Resultado de '1 2 + 4 *': 12
 Resultado de '9 3 / 2 +': 5.0
 Resultado de '2 3 * 5 +': 11

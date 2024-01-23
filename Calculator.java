@@ -34,7 +34,16 @@ public class Calculator implements CalculatorInterface {
     }
 
     private void performOperation(String operator) {
+        if (stack.isEmpty()) {
+            throw new IllegalArgumentException("Without further information, please add more operands");
+        }
+    
         int oper1 = stack.pop();
+    
+        if (stack.isEmpty()) {
+            throw new IllegalArgumentException("Without further information, please add more operands");
+        }
+    
         int oper2 = stack.pop();
 
         switch (operator) {
