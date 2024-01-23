@@ -1,14 +1,34 @@
-/**
- * Nombre del programa: Hoja de Trabajo 2 - Calculadora
- * Descripción: Simulación de radio, algoritmos y estructuras de datos. 
- * Autores: Leonardo Dufrey Mejía Mejía, Maria José Girón Isidro
- * Fecha de creación: 21 de enero de 2024
- * Fecha de última modificación: 23 de enero de 2024
- * Fuentes de información: [crédito a toda fuente de información que haya aportado al desarrollo del programa]
- */
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 
-public class Principal{
-    public static void main(String args[]){
-        CustomStack <Integer> oullea = new CustomStack<>();
+public class Principal {
+    public static void main(String[] args) {
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("datos.txt"));
+            String line;
+
+            while ((line = br.readLine()) != null) {
+                CustomStack<Double> stack = new CustomStack<>();
+                CalculatorInterface calculator = new Calculator();
+
+                try {
+                    int result = calculator.evaluatePostfix(line);
+                    System.out.println("Resultado: " + result);
+                } catch (IllegalArgumentException e) {
+                    System.out.println("Error en la expresión: " + e.getMessage());
+                }
+            }
+
+            br.close();
+
+        } catch (FileNotFoundException e) {
+            System.err.println("Error: Archivo 'datos.txt' no encontrado. Verifica la ubicación del archivo.");
+            e.printStackTrace();
+        } catch (IOException e) {
+            System.err.println("Error de lectura del archivo.");
+            e.printStackTrace();
+        }
     }
 }

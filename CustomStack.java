@@ -1,26 +1,25 @@
-public class CustomStack <T>{
-    private Node<T> lastNode;
-    private Node<T> firstNode;
+import java.util.LinkedList;
 
-    public void push(T value){
-        if(lastNode == null){
-            lastNode = new Node<T>(value);
-            firstNode = lastNode;
-        } else{
-            Node<T> current = new Node<T>(value);
-            current.setNext(firstNode);
-            firstNode = current;
-        }
+public class CustomStack<T> {
+    private LinkedList<T> stack;
+
+    public CustomStack() {
+        this.stack = new LinkedList<>();
     }
 
-    public T pop(){
-        if(firstNode != null){
-            Node<T> current = firstNode;
-            firstNode = firstNode.getNext();
-            return current.getValue();
-        } else{
-            return firstNode.getValue();
-        }
+    public void push(T value) {
+        stack.push(value);
+    }
 
+    public T pop() {
+        return stack.pop();
+    }
+
+    public boolean isEmpty() {
+        return stack.isEmpty();
+    }
+
+    public int size() {
+        return stack.size();
     }
 }
