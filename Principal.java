@@ -10,7 +10,6 @@ public class Principal {
             String line;
 
             while ((line = br.readLine()) != null) {
-                CustomStack<Double> stack = new CustomStack<>();
                 CalculatorInterface calculator = new Calculator();
 
                 try {
