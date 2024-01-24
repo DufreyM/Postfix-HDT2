@@ -15,13 +15,12 @@ public class Principal {
 
                 try {
                     int result = calculator.evaluatePostfix(line);
-<<<<<<< HEAD
+
                     System.out.println("Resultado: " + result);
                     int result2 = calculator2.evaluatePostfix(line);
                     System.out.println("Resultado (pareja): " + result2);
-=======
                     System.out.println("Result: " + result);
->>>>>>> 33721f6e10ca9e83a2517f847e44c016fd695848
+
                 } catch (IllegalArgumentException e) {
                     System.out.println(e.getMessage());
                 }
