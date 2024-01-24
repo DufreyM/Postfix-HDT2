@@ -12,10 +12,13 @@ public class Principal {
             while ((line = br.readLine()) != null) {
                 CustomStack<Double> stack = new CustomStack<>();
                 CalculatorInterface calculator = new Calculator();
+                CalculatorInterface calculator2 = new CalculatorPostfix();
 
                 try {
                     int result = calculator.evaluatePostfix(line);
                     System.out.println("Resultado: " + result);
+                    int result2 = calculator2.evaluatePostfix(line);
+                    System.out.println("Resultado (pareja): " + result2);
                 } catch (IllegalArgumentException e) {
                     System.out.println("Error en la expresión: " + e.getMessage());
                 }
@@ -30,5 +33,7 @@ public class Principal {
             System.err.println("Error de lectura del archivo.");
             e.printStackTrace();
         }
+
+        
     }
 }
