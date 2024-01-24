@@ -1,4 +1,5 @@
 import java.util.LinkedList;
+import java.util.NoSuchElementException;
 
 public class CustomStack<T> {
     private LinkedList<T> stack;
@@ -12,8 +13,12 @@ public class CustomStack<T> {
     }
 
     public T pop() {
-        return stack.pop();
+        if (isEmpty()) {
+            throw new NoSuchElementException("Stack is empty");
+        }
+        return stack.removeFirst();
     }
+    
 
     public boolean isEmpty() {
         return stack.isEmpty();

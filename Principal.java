@@ -10,27 +10,31 @@ public class Principal {
             String line;
 
             while ((line = br.readLine()) != null) {
-                CustomStack<Double> stack = new CustomStack<>();
                 CalculatorInterface calculator = new Calculator();
                 CalculatorInterface calculator2 = new CalculatorPostfix();
 
                 try {
                     int result = calculator.evaluatePostfix(line);
+<<<<<<< HEAD
                     System.out.println("Resultado: " + result);
                     int result2 = calculator2.evaluatePostfix(line);
                     System.out.println("Resultado (pareja): " + result2);
+=======
+                    System.out.println("Result: " + result);
+>>>>>>> 33721f6e10ca9e83a2517f847e44c016fd695848
                 } catch (IllegalArgumentException e) {
-                    System.out.println("Error en la expresión: " + e.getMessage());
+                    System.out.println(e.getMessage());
                 }
             }
 
             br.close();
 
         } catch (FileNotFoundException e) {
-            System.err.println("Error: Archivo 'datos.txt' no encontrado. Verifica la ubicación del archivo.");
+            //Maneja errores con el archivo tipo .txt
+            System.err.println("Error: File 'data.txt' not found. Check the file location.");
             e.printStackTrace();
         } catch (IOException e) {
-            System.err.println("Error de lectura del archivo.");
+            System.err.println("File reading error.");
             e.printStackTrace();
         }
 
