@@ -1,4 +1,4 @@
-public class Calculator implements CalculatorInterface {
+public class Calculator implements Calculatorinterface {
     private CustomStack<Integer> stack;
 
     public Calculator() {

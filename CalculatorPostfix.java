@@ -7,7 +7,7 @@
  import java.util.EmptyStackException;
  import java.util.Stack;
 
-public class CalculatorPostfix implements CalculatorInterface {
+public class CalculatorPostfix implements Calculatorinterface {
     private Stack<Integer> stack;
 
     public CalculatorPostfix() {

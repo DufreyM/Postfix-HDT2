@@ -10,8 +10,8 @@ public class Principal {
             String line;
 
             while ((line = br.readLine()) != null) {
-                CalculatorInterface calculator = new Calculator();
-                CalculatorInterface calculator2 = new CalculatorPostfix();
+                Calculatorinterface calculator = new Calculator();
+                Calculatorinterface calculator2 = new CalculatorPostfix();
 
                 try {
                     int result = calculator.evaluatePostfix(line);
